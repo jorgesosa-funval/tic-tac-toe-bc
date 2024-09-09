@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "start": "Node --watch ./api/index.js"
+    "start": "Node ./api/index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

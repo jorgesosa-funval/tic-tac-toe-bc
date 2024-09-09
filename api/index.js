@@ -3,9 +3,10 @@ import http from 'http'
 import { Server } from "socket.io";
 import { rooms, createRoom, getRoomWinner } from "./utils/Rooms.js";
 
-
 const app = express()
 const server = http.createServer(app)
+ 
+
 app.use(express.json())
 app.get('/', (req, res) => {
     res.json({ message: 'Server on' })
@@ -13,8 +14,9 @@ app.get('/', (req, res) => {
 
 const io = new Server(server, {
     cors: {
-        origin: 'http://localhost:5173',
-        methods: ['GET', 'POST']
+        origin: ['http://localhost:5173'],
+        methods: ['GET', 'POST'],
+        credentials: true
     }
 });
 
